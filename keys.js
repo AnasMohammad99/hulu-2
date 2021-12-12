@@ -1,3 +1,0 @@
-export const API_KEY = "AIzaSyAPEqAEWKRHB1aQRDBVRvFSLTTHLN8mhh0";
-
-export const CONTEXT_KEY = "a9488401f192cd052";
