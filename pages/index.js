@@ -1,65 +1,28 @@
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import Confirm from "../components/Confirm";
+import LocationSelection from "../components/LocationSelection";
+import Map from "../components/Map";
+import Navbar from "../components/Navbar";
 
+const style = {
+  wrapper: `h-screen w-screen flex flex-col`,
+};
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className={style.wrapper}>
+      <Navbar />
+      <div className="h-full w-screen flex-1 z-10">
+        <Map />
+      </div>
+      <div
+        className={`h-full w-[400px] ml-[1rem] py-[3rem] absolute top-20 right-50 flex flex-col justify-end z-20`}
+      >
+        <div
+          className={`h-full max-h-[700px] bg-white rounded-lg flex flex-col overflow-scroll`}
         >
-          Powered by{" "}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+          <LocationSelection />
+          <Confirm />
+        </div>
+      </div>
     </div>
   );
 }
