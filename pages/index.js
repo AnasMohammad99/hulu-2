@@ -1,26 +1,25 @@
-import Confirm from "../components/Confirm";
-import LocationSelection from "../components/LocationSelection";
-import Map from "../components/Map";
-import Navbar from "../components/Navbar";
+import Body from "../components/Body";
+import Head from "../components/Head";
+import Sidebar from "../components/Sidebar";
 
-const style = {
-  wrapper: `h-screen w-screen flex flex-col`,
-};
 export default function Home() {
   return (
-    <div className={style.wrapper}>
-      <Navbar />
-      <div className="h-full w-screen flex-1 z-10">
-        <Map />
+    <div className="grid grid-cols-6 ">
+      <div className="col-span-6">
+        <Head />
       </div>
-      <div
-        className={`h-full w-[400px] ml-[1rem] py-[3rem] absolute top-20 right-50 flex flex-col justify-end z-20`}
-      >
+      <div className="col-span-6 grid grid-cols-12">
         <div
-          className={`h-full max-h-[700px] bg-white rounded-lg flex flex-col overflow-scroll`}
+          className=" col-span-2 border-r
+         border-gray-300 h-[40rem]"
         >
-          <LocationSelection />
-          <Confirm />
+          <Sidebar />
+        </div>
+        <div className="col-span-10 ">
+          <p className=" py-4 pl-6 border-b border-gray-300 text-lg font-bold">
+            Inventory
+          </p>
+          <Body />
         </div>
       </div>
     </div>
